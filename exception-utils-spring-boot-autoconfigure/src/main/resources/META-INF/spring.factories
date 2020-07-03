@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.github.davitavorah.exceptions.handler.NoResultExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.BadRequestExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.NotAuthorizedExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.InvalidSessionExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.IllegalArgumentExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.DuplicatedEntityExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.ConstraintViolationExceptionHandler,\
+  com.github.davitavorah.exceptions.handler.MethodArgumentNotValidExceptionHandler
