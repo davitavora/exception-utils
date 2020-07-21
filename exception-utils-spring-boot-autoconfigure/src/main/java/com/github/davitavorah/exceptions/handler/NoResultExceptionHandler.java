@@ -13,7 +13,7 @@ public class NoResultExceptionHandler {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NoResultException.class)
-    public APIError handleResourceNotFoundException(NoResultException exception) {
+    public APIError handleNoResultException(NoResultException exception) {
         return APIError.builder().message(exception.getMessage()).type(ExceptionType.ERROR).build();
     }
 

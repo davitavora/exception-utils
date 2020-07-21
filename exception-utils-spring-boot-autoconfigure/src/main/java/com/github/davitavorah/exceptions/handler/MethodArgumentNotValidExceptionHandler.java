@@ -16,7 +16,7 @@ public class MethodArgumentNotValidExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public APIError handleResourceNotFoundException(MethodArgumentNotValidException exception) {
+    public APIError handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
         String constraintViolationMessages = exception.getBindingResult().getAllErrors()
                 .stream()
                 .map(error -> String.join(": ", ((FieldError) error).getField(), error.getDefaultMessage()))

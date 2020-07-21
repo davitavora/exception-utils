@@ -13,7 +13,7 @@ public class NotAuthorizedExceptionHandler {
 
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(NotAuthorizedException.class)
-    public APIError handleResourceNotFoundException(NotAuthorizedException exception) {
+    public APIError handleNotAuthorizedException(NotAuthorizedException exception) {
         return APIError.builder().message(exception.getMessage()).type(ExceptionType.ERROR).build();
     }
 

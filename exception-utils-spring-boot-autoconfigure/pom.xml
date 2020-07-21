@@ -12,7 +12,7 @@
     <artifactId>exception-utils-spring-boot-autoconfigure</artifactId>
 
     <dependencies>
-        <!-- Spring -->
+        <!--  Spring  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -37,22 +37,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
-            <version>2.3.0.RELEASE</version>
+            <version>${spring-boot.version}</version>
         </dependency>
-
-        <!-- Internal -->
+        <!--  Internal  -->
         <dependency>
             <groupId>com.github.davitavorah</groupId>
             <artifactId>exception-utils-library</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <optional>true</optional>
-        </dependency>
-
-        <!-- Internal -->
-        <dependency>
-            <groupId>io.vavr</groupId>
-            <artifactId>vavr</artifactId>
-            <version>${vavr.version}</version>
         </dependency>
     </dependencies>
 
@@ -60,14 +52,12 @@
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Spring -->
+        <!--  Spring  -->
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-
-        <!-- Others -->
-        <vavr.version>0.10.2</vavr.version>
+        <!--  Others  -->
+        <vavr.version>0.10.0</vavr.version>
         <lombok.version>1.18.12</lombok.version>
-
-        <!-- Maven -->
+        <!--  Maven  -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 

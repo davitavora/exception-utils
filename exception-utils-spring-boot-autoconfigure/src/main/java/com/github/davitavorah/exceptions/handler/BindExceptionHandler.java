@@ -2,24 +2,24 @@ package com.github.davitavorah.exceptions.handler;
 
 import com.github.davitavorah.exceptions.model.APIError;
 import com.github.davitavorah.exceptions.model.enums.ExceptionType;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice
-public class ConstraintViolationExceptionHandler {
+public class BindExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(ConstraintViolationException.class)
-    public APIError handleConstraintViolationException(ConstraintViolationException exception) {
-        String constraintViolationMessages = exception.getConstraintViolations()
+    @ExceptionHandler(BindException.class)
+    public APIError handleBindException(BindException exception) {
+        String constraintViolationMessages = exception.getBindingResult().getAllErrors()
                 .stream()
-                .map(ConstraintViolation::getMessage)
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .collect(Collectors.joining(". "));
         return APIError.builder().message(constraintViolationMessages).type(ExceptionType.ERROR).build();
     }

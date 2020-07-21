@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.github.davitavorah.exceptions.handler.BindExceptionHandler,\
   com.github.davitavorah.exceptions.handler.NoResultExceptionHandler,\
   com.github.davitavorah.exceptions.handler.BadRequestExceptionHandler,\
   com.github.davitavorah.exceptions.handler.NotAuthorizedExceptionHandler,\

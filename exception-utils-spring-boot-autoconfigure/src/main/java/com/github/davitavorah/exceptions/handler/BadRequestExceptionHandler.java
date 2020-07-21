@@ -13,7 +13,7 @@ public class BadRequestExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BadRequestException.class)
-    public APIError handleResourceNotFoundException(BadRequestException exception) {
+    public APIError handleBadRequestException(BadRequestException exception) {
         return APIError.builder().message(exception.getMessage()).type(ExceptionType.ERROR).build();
     }
 

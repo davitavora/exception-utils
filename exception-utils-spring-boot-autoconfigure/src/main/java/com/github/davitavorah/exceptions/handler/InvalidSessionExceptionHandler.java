@@ -13,7 +13,7 @@ public class InvalidSessionExceptionHandler {
 
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(InvalidSessionException.class)
-    public APIError handleResourceNotFoundException(InvalidSessionException exception) {
+    public APIError handleInvalidSessionException(InvalidSessionException exception) {
         return APIError.builder().message(exception.getMessage()).type(ExceptionType.INVALID_SESSION).build();
     }
 

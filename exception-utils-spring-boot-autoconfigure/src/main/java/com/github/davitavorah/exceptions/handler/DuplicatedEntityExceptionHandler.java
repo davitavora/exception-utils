@@ -13,7 +13,7 @@ public class DuplicatedEntityExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(DuplicatedEntityException.class)
-    public APIError handleResourceNotFoundException(DuplicatedEntityException exception) {
+    public APIError handleDuplicatedEntityException(DuplicatedEntityException exception) {
         return APIError.builder().message(exception.getMessage()).type(ExceptionType.DUPLICATED_ENTITY).build();
     }
 
